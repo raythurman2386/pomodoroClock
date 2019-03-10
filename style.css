@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Permanent Marker", cursive;
+  background: #333;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+}
+
+.addSession,
+.minSession,
+.addBreak,
+.minBreak {
+  border: none;
+  border-radius: 50%;
+  padding: 6px 8px;
+}
