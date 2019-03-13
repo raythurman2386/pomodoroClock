@@ -15,10 +15,10 @@ if (status === true) {
   heading.textContent = "BREAK TIME!!!";
 }
 
-heading.addEventListener("click", startClock);
+heading.addEventListener("click", startClock, 5000);
 
 function startClock(e) {
-  let duration = 60 * 5;
+  let duration = 60 * 25;
   let timer = duration,
     minutes,
     seconds;
