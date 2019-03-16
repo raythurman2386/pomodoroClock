@@ -8,16 +8,10 @@ const breakTimer = document.querySelector(".breakTimer");
 const addBreak = document.querySelector(".addBreak");
 const reset = document.querySelector(".resetButton");
 
-let status = true;
-if (status === true) {
-  heading.textContent = "Keep Grinding";
-} else {
-  heading.textContent = "BREAK TIME!!!";
-}
-
 heading.addEventListener("click", startClock, 5000);
 
 function startClock(e) {
+  heading.textContent = "Keep Grinding";
   let duration = 60 * 25;
   let timer = duration,
     minutes,
@@ -33,12 +27,31 @@ function startClock(e) {
 
     if (--timer < 0) {
       timer = duration;
+      heading.textContent = "Break Time!"
+      breakTime();
     }
   }, 1000);
 }
 
-// have a way to start the clock
+function breakTime() {
+  let duration = 60 * 5;
+  let timer = duration,
+    minutes,
+    seconds;
+  setInterval(function() {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
 
-// have a way to reset the clock
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
 
-// set up the countdown to work
+    liveSession.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+      timer = duration;
+      heading.textContent = "Keep Grinding";
+    }
+  }, 1000);
+}
+
+startClock();
