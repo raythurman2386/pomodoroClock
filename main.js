@@ -11,6 +11,7 @@ const reset = document.querySelector(".resetButton");
 heading.addEventListener("click", startClock, 5000);
 
 function startClock(e) {
+  let work = true;
   heading.textContent = "Keep Grinding";
   let duration = 60 * 25;
   let timer = duration,
